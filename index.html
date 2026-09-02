@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IS Career Launchpad</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+  body { background-color: #f4f6f8; color: #1a1a1a; }
+
+  .banner { background-color: #002e5d; color: white; text-align: center; padding: 50px 20px; }
+  .banner h1 { font-size: 2.6rem; margin-bottom: 10px; }
+  .banner p { font-size: 1.1rem; opacity: 0.9; }
+
+  nav.tabs { display: flex; justify-content: center; gap: 20px; padding: 20px; background-color: #e6ebf0; }
+  nav.tabs button {
+    padding: 14px 30px; font-size: 1rem; border: none; border-radius: 8px;
+    background-color: #0059b3; color: white; cursor: pointer; transition: background-color 0.2s ease;
+  }
+  nav.tabs button:hover { background-color: #003d80; }
+  nav.tabs button.active { background-color: #001f3f; }
+
+  .page { display: none; padding: 30px 40px; max-width: 900px; margin: 0 auto; }
+  .page.active { display: block; }
+  .page h2 { margin-bottom: 15px; color: #002e5d; }
+
+  /* Career cards */
+  .career-list { display: flex; flex-direction: column; gap: 16px; margin-top: 20px; }
+
+  .career-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+    border: 1px solid #dfe4ea;
+  }
+
+  .career-header {
+    padding: 20px 24px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .career-header:hover { background-color: #f0f4f8; }
+
+  .career-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #002e5d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .career-title .arrow {
+    font-size: 1rem;
+    transition: transform 0.2s ease;
+  }
+
+  .career-card.open .career-title .arrow {
+    transform: rotate(180deg);
+  }
+
+  .career-desc {
+    font-size: 0.95rem;
+    color: #444;
+  }
+
+  .career-bestfit {
+    font-size: 0.9rem;
+    color: #0059b3;
+    font-style: italic;
+  }
+
+  .career-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: #f9fafb;
+    padding: 0 24px;
+  }
+
+  .career-card.open .career-details {
+    max-height: 1300px;
+    padding: 20px 24px;
+    border-top: 1px solid #dfe4ea;
+  }
+
+  .career-details h4 {
+    color: #002e5d;
+    margin-top: 12px;
+    margin-bottom: 4px;
+  }
+
+  .career-details h4:first-child { margin-top: 0; }
+
+  .career-details p {
+    font-size: 0.9rem;
+    color: #333;
+  }
+
+  .career-details ul {
+    margin: 6px 0 6px 20px;
+  }
+
+  .career-details li {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 4px;
+  }
+
+  /* Stat row for Salary + Growth */
+  .stat-row {
+    display: flex;
+    gap: 30px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+  }
+
+  .stat-box {
+    background-color: #eef2f7;
+    border-radius: 8px;
+    padding: 10px 16px;
+    min-width: 140px;
+  }
+
+  .stat-box .stat-label {
+    font-size: 0.75rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .stat-box .stat-value {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #002e5d;
+  }
+</style>
+</head>
+<body>
+
+  <header class="banner">
+    <h1>IS Career Launchpad</h1>
+    <p>Explore IS career paths. Prepare for the interviews that get you there.</p>
+  </header>
+
+  <nav class="tabs">
+    <button id="btn-home" class="active" onclick="showPage('home')">Home</button>
+    <button id="btn-discover" onclick="showPage('discover')">Discover</button>
+    <button id="btn-interview" onclick="showPage('interview')">Interview Prep</button>
+  </nav>
+
+  <section id="page-home" class="page active">
+    <h2>Welcome</h2>
+    <p>Use the buttons above to explore IS career paths or practice for interviews.</p>
+  </section>
+
+  <section id="page-discover" class="page">
+    <h2>Career Path Discovery</h2>
+    <p>Click a career to see more details.</p>
+
+    <div class="career-list">
+
+      <!-- CAREER 1: Software / Application Developer -->
+      <div class="career-card">
+        <div class="career-header" onclick="toggleCard(this)">
+          <div class="career-title"><span>Software / Application Developer</span><span class="arrow">▼</span></div>
+          <div class="career-desc">Software developers build and maintain the applications people and businesses use — mobile apps, websites, internal business tools, payment systems, or enterprise software. A typical day includes writing and reviewing code, building features, fixing bugs, testing, and collaborating with designers and analysts.</div>
+          <div class="career-bestfit">Best fit if you like: coding, solving technical problems, building things, and working with technology for long periods.</div>
+        </div>
+        <div class="career-details">
+          <h4>Skills & Tools</h4>
+          <ul>
+            <li>Programming: Python, Java, JavaScript/TypeScript, C#, SQL</li>
+            <li>Object-oriented programming</li>
+            <li>Data structures and basic algorithms</li>
+            <li>Git/GitHub</li>
+            <li>APIs and web services</li>
+            <li>Databases and SQL</li>
+            <li>Debugging and testing</li>
+            <li>Basic cloud concepts, Agile/Scrum</li>
+            <li>Tools: VS Code, GitHub, Docker, Jira, PostgreSQL/MySQL, AWS/Azure/GCP</li>
+          </ul>
+          <h4>What You Should Know Before an Internship</h4>
+          <ul>
+            <li>Comfortably program in one language</li>
+            <li>Understand variables, functions, loops, conditionals, and basic data structures</li>
+            <li>Know basic SQL</li>
+            <li>Understand Git/GitHub</li>
+            <li>Have built at least 1–2 projects</li>
+            <li>Be able to explain your code</li>
+            <li>Understand APIs at a basic level</li>
+          </ul>
+          <div class="stat-row">
+            <div class="stat-box"><div class="stat-label">Entry-Level</div><div class="stat-value">$65k–$95k</div></div>
+            <div class="stat-box"><div class="stat-label">Median</div><div class="stat-value">$135,980</div></div>
+            <div class="stat-box"><div class="stat-label">Growth (2025–35)</div><div class="stat-value">+10%</div></div>
+          </div>
+          <h4>What Makes a Strong Candidate</h4>
+          <p>Can actually build things — not just pass programming classes. Strong problem-solving ability, understands fundamentals rather than memorizing syntax, has a GitHub/project portfolio, can learn unfamiliar technologies quickly, and communicates well with non-developers.</p>
+        </div>
+      </div>
+
+      <!-- CAREER 2: Business / Systems Analyst -->
+      <div class="career-card">
+        <div class="career-header" onclick="toggleCard(this)">
+          <div class="career-title"><span>Business / Systems Analyst</span><span class="arrow">▼</span></div>
+          <div class="career-desc">A business/systems analyst sits between business users and technical teams — figuring out what a business actually needs and what technology could solve it. Day-to-day work includes interviewing users, gathering requirements, mapping processes, and working with developers to test new systems.</div>
+          <div class="career-bestfit">Best fit if you like: technology but don't want to spend all day programming.</div>
+        </div>
+        <div class="career-details">
+          <h4>Skills & Tools</h4>
+          <ul>
+            <li>SQL and Excel</li>
+            <li>Data/process analysis</li>
+            <li>Requirements gathering</li>
+            <li>Process modeling and system design concepts</li>
+            <li>Basic programming knowledge</li>
+            <li>APIs and databases, Agile/Scrum</li>
+            <li>Tools: Excel, SQL, Jira, Confluence, Visio/Lucidchart, Power BI, Tableau</li>
+          </ul>
+          <h4>What You Should Know Before an Internship</h4>
+          <ul>
+            <li>Write basic SQL queries</li>
+            <li>Analyze data in Excel</li>
+            <li>Create process diagrams</li>
+            <li>Explain a business problem clearly</li>
+            <li>Gather requirements through questioning</li>
+            <li>Understand databases and information systems</li>
+            <li>Communicate with both technical and nontechnical people</li>
+          </ul>
+          <div class="stat-row">
+            <div class="stat-box"><div class="stat-label">Entry-Level</div><div class="stat-value">$60k–$85k</div></div>
+            <div class="stat-box"><div class="stat-label">Median</div><div class="stat-value">$105,850</div></div>
+            <div class="stat-box"><div class="stat-label">Growth (2025–35)</div><div class="stat-value">+8%</div></div>
+          </div>
+          <h4>What Makes a Strong Candidate</h4>
+          <p>Combines business understanding, technical literacy, and communication. Especially valuable: asking good questions, listening carefully, translating technical concepts into business language, strong documentation skills, and curiosity about how systems work.</p>
+        </div>
+      </div>
+
+      <!-- CAREER 3: Data Analyst / Data Scientist -->
+      <div class="career-card">
+        <div class="career-header" onclick="toggleCard(this)">
+          <div class="career-title"><span>Data Analyst / Data Scientist</span><span class="arrow">▼</span></div>
+          <div class="career-desc">Data analysts turn raw data into information that helps people make decisions — writing SQL, cleaning data, building dashboards, and presenting findings. Data scientists tackle more advanced problems like predictive modeling, machine learning, and forecasting.</div>
+          <div class="career-bestfit">Best fit if you like: numbers, finding patterns, answering questions, and explaining what data means.</div>
+        </div>
+        <div class="career-details">
+          <h4>Skills & Tools</h4>
+          <ul>
+            <li>SQL and Excel</li>
+            <li>Power BI / Tableau</li>
+            <li>Python and Pandas</li>
+            <li>Basic statistics and data visualization</li>
+            <li>Databases</li>
+            <li>For data science: predictive modeling, machine learning, experimentation</li>
+          </ul>
+          <h4>What You Should Know Before an Internship</h4>
+          <ul>
+            <li>Strong Excel</li>
+            <li>SQL fundamentals</li>
+            <li>Basic statistics</li>
+            <li>One visualization platform</li>
+            <li>Basic Python is increasingly useful</li>
+            <li>Ability to explain findings to nontechnical people</li>
+          </ul>
+          <div class="stat-row">
+            <div class="stat-box"><div class="stat-label">Entry (Analyst)</div><div class="stat-value">$55k–$80k</div></div>
+            <div class="stat-box"><div class="stat-label">Median (Data Sci)</div><div class="stat-value">$120,230</div></div>
+            <div class="stat-box"><div class="stat-label">Growth (Data Sci)</div><div class="stat-value">+35%</div></div>
+          </div>
+          <h4>What Makes a Strong Candidate</h4>
+          <p>Can connect data → analysis → business decision, rather than simply making attractive charts. A portfolio project showing SQL → analysis → dashboard → recommendation is strong evidence.</p>
+        </div>
+      </div>
+
+      <!-- CAREER 4: Cybersecurity Analyst -->
+      <div class="career-card">
+        <div class="career-header" onclick="toggleCard(this)">
+          <div class="career-title"><span>Cybersecurity Analyst</span><span class="arrow">▼</span></div>
+          <div class="career-desc">Cybersecurity analysts help organizations protect systems, networks, applications, and data from attacks. Day-to-day work includes monitoring security alerts, investigating suspicious activity, analyzing logs, and responding to incidents.</div>
+          <div class="career-bestfit">Best fit if you like: investigation, problem-solving, technology, and thinking about threats and vulnerabilities.</div>
+        </div>
+        <div class="career-details">
+          <h4>Skills & Tools</h4>
+          <ul>
+            <li>Networking fundamentals, TCP/IP</li>
+            <li>Linux and Windows</li>
+            <li>Authentication/access control</li>
+            <li>Python/scripting, SQL</li>
+            <li>Log analysis, SIEM concepts</li>
+            <li>Tools: Splunk, Microsoft Sentinel, Wireshark, CrowdStrike, Microsoft Defender, Nmap</li>
+            <li>Certifications: Security+, Network+, CySA+</li>
+          </ul>
+          <h4>What You Should Know Before an Internship</h4>
+          <ul>
+            <li>Basic networking</li>
+            <li>Common attacks such as phishing, malware, and credential theft</li>
+            <li>Authentication and authorization</li>
+            <li>Basic security concepts</li>
+            <li>How to read logs</li>
+            <li>Basic Linux</li>
+            <li>How computers communicate across networks</li>
+          </ul>
+          <div class="stat-row">
+            <div class="stat-box"><div class="stat-label">Entry-Level</div><div class="stat-value">$65k–$90k</div></div>
+            <div class="stat-box"><div class="stat-label">Median</div><div class="stat-value">$129,180</div></div>
+            <div class="stat-box"><div class="stat-label">Growth (2025–35)</div><div class="stat-value">+29%</div></div>
+          </div>
+          <h4>What Makes a Strong Candidate</h4>
+          <p>Naturally curious about how systems can fail, strong attention to detail, thinks like both an attacker and defender, understands networking, stays calm during incidents, and is willing to continuously learn.</p>
+        </div>
+      </div>
+
+      <!-- CAREER 5: IT Project Manager -->
+      <div class="career-card">
+        <div class="career-header" onclick="toggleCard(this)">
+          <div class="career-title"><span>IT Project Manager</span><span class="arrow">▼</span></div>
+          <div class="career-desc">An IT project manager isn't usually the person building the technology — they make sure the technology project actually gets completed successfully, coordinating developers, analysts, designers, and stakeholders while tracking deadlines and budgets.</div>
+          <div class="career-bestfit">Best fit if you like: people, organization, leadership, communication, and technology — but not necessarily coding.</div>
+        </div>
+        <div class="career-details">
+          <h4>Skills & Tools</h4>
+          <ul>
+            <li>Project planning, Agile/Scrum</li>
+            <li>Risk management and budgeting</li>
+            <li>Stakeholder management and communication</li>
+            <li>Requirements, basic technical literacy</li>
+            <li>Tools: Jira, Confluence, Microsoft Project, Excel, Smartsheet, Asana, Monday.com</li>
+          </ul>
+          <h4>What You Should Know Before an Internship</h4>
+          <ul>
+            <li>Realistic entry points are project coordinator, associate PM, business analyst, IT analyst, or scrum/PM intern — not a lead PM role</li>
+            <li>Agile vs. waterfall</li>
+            <li>Basic project planning</li>
+            <li>How to create a project schedule</li>
+            <li>How to track risks/issues</li>
+            <li>How to communicate status</li>
+            <li>Basic IT concepts</li>
+          </ul>
+          <div class="stat-row">
+            <div class="stat-box"><div class="stat-label">Entry-Level</div><div class="stat-value">$55k–$80k</div></div>
+            <div class="stat-box"><div class="stat-label">Median</div><div class="stat-value">$102,320</div></div>
+            <div class="stat-box"><div class="stat-label">Growth (2025–35)</div><div class="stat-value">+7%</div></div>
+          </div>
+          <h4>What Makes a Strong Candidate</h4>
+          <p>Extremely organized, excellent communicator, comfortable leading meetings, good at handling conflict, understands enough technology to work with engineers, and can keep track of many moving parts.</p>
+        </div>
+      </div>
+
+      <!-- CAREER 6: UX Designer / Product Manager -->
+      <div class="career-card">
+        <div class="career-header" onclick="toggleCard(this)">
+          <div class="career-title"><span>UX Designer / Product Manager</span><span class="arrow">▼</span></div>
+          <div class="career-desc">UX designers focus on how users experience a product — research, wireframes, prototypes, and usability testing. Product managers decide what a product should accomplish and why, prioritizing features and defining roadmaps.</div>
+          <div class="career-bestfit">Best fit if you like: people + technology + creativity + figuring out what makes products useful.</div>
+        </div>
+        <div class="career-details">
+          <h4>Skills & Tools</h4>
+          <ul>
+            <li>User research, wireframing, prototyping</li>
+            <li>Information architecture, usability testing</li>
+            <li>Visual/interface design</li>
+            <li>Tools: Figma, FigJam, Adobe Creative Cloud, Miro</li>
+            <li>For PM: market/user analysis, feature prioritization, product specs, roadmapping</li>
+          </ul>
+          <h4>What You Should Know Before an Internship</h4>
+          <ul>
+            <li>Direct entry into product management is highly competitive — business analyst, product analyst, UX research, software development, and project management are common stepping-stone roles</li>
+            <li>Basic wireframing/prototyping tool experience (e.g., Figma)</li>
+            <li>Ability to conduct or participate in user research</li>
+            <li>Comfort presenting design or product decisions and explaining the reasoning behind them</li>
+          </ul>
+          <div class="stat-row">
+            <div class="stat-box"><div class="stat-label">Entry-Level</div><div class="stat-value">$55k–$80k</div></div>
+            <div class="stat-box"><div class="stat-label">Median</div><div class="stat-value">$104,000</div></div>
+            <div class="stat-box"><div class="stat-label">Growth (2025–35)</div><div class="stat-value">+6%</div></div>
+          </div>
+          <h4>What Makes a Strong Candidate</h4>
+          <p>Empathy for users, creativity, communication, analytical thinking, curiosity, ability to accept feedback, and an understanding of technology.</p>
+        </div>
+      </div>
+
+      <!-- CAREER 7: ERP / Systems Consultant -->
+      <div class="career-card">
+        <div class="career-header" onclick="toggleCard(this)">
+          <div class="career-title"><span>ERP / Systems Consultant</span><span class="arrow">▼</span></div>
+          <div class="career-desc">ERP consultants help organizations implement and improve large business systems like SAP, Oracle, Salesforce, or Microsoft Dynamics. Day-to-day work includes meeting with clients, gathering requirements, configuring software, and training users.</div>
+          <div class="career-bestfit">Best fit if you like: business processes, technology, problem-solving, clients, and variety.</div>
+        </div>
+        <div class="career-details">
+          <h4>Skills & Tools</h4>
+          <ul>
+            <li>SQL and databases</li>
+            <li>Business process modeling</li>
+            <li>Requirements gathering, system configuration</li>
+            <li>Data integration, APIs, Excel</li>
+            <li>ERP/CRM platforms: SAP, Salesforce, Oracle, Microsoft Dynamics</li>
+          </ul>
+          <h4>What You Should Know Before an Internship</h4>
+          <ul>
+            <li>You don't need to know SAP or Salesforce perfectly beforehand</li>
+            <li>Business processes</li>
+            <li>Databases and SQL</li>
+            <li>Systems analysis</li>
+            <li>Requirements gathering</li>
+            <li>How enterprise software works</li>
+            <li>Getting hands-on experience with one major platform can set you apart</li>
+          </ul>
+          <div class="stat-row">
+            <div class="stat-box"><div class="stat-label">Entry-Level</div><div class="stat-value">$65k–$90k</div></div>
+            <div class="stat-box"><div class="stat-label">Experienced</div><div class="stat-value">$100k–$150k+</div></div>
+            <div class="stat-box"><div class="stat-label">Growth (2025–35)</div><div class="stat-value">+8%</div></div>
+          </div>
+          <h4>What Makes a Strong Candidate</h4>
+          <p>Combines business + technology + communication. Strong consultants are comfortable talking to executives in the morning and technical teams in the afternoon.</p>
+        </div>
+      </div>
+
+      <!-- CAREER 8: Cloud / Infrastructure Engineer -->
+      <div class="career-card">
+        <div class="career-header" onclick="toggleCard(this)">
+          <div class="career-title"><span>Cloud / Infrastructure Engineer</span><span class="arrow">▼</span></div>
+          <div class="career-desc">Cloud/infrastructure engineers build and maintain the technology infrastructure that applications run on — deploying cloud infrastructure, managing servers, automating deployments, and troubleshooting outages.</div>
+          <div class="career-bestfit">Best fit if you like: understanding how technology works under the hood, troubleshooting, automation, networking, and cloud platforms.</div>
+        </div>
+        <div class="career-details">
+          <h4>Skills & Tools</h4>
+          <ul>
+            <li>Networking and Linux</li>
+            <li>Cloud computing, virtual machines, containers</li>
+            <li>Infrastructure as Code, CI/CD</li>
+            <li>Scripting, security, monitoring</li>
+            <li>Platforms: AWS, Azure, Google Cloud</li>
+            <li>Tools: Docker, Kubernetes, Terraform, GitHub Actions, Jenkins</li>
+          </ul>
+          <h4>What You Should Know Before an Internship</h4>
+          <ul>
+            <li>Basic networking</li>
+            <li>Linux commands</li>
+            <li>Cloud fundamentals</li>
+            <li>Virtualization</li>
+            <li>Git</li>
+            <li>Basic scripting</li>
+            <li>Basic security</li>
+            <li>How applications communicate with infrastructure</li>
+          </ul>
+          <div class="stat-row">
+            <div class="stat-box"><div class="stat-label">Entry-Level</div><div class="stat-value">$65k–$90k</div></div>
+            <div class="stat-box"><div class="stat-label">Median (related)</div><div class="stat-value">$134,050</div></div>
+            <div class="stat-box"><div class="stat-label">Growth (2025–35)</div><div class="stat-value">+8%</div></div>
+          </div>
+          <h4>What Makes a Strong Candidate</h4>
+          <p>Understands basic networking, Linux commands, cloud fundamentals, virtualization, Git, and basic scripting. Hands-on projects — like deploying an app to AWS and documenting the architecture — carry more weight than just saying "I know AWS."</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="page-interview" class="page">
+    <h2>Interview Prep</h2>
+    <p>Content coming soon.</p>
+  </section>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('nav.tabs button').forEach(b => b.classList.remove('active'));
+      document.getElementById('page-' + pageId).classList.add('active');
+      document.getElementById('btn-' + pageId).classList.add('active');
+    }
+
+    function toggleCard(headerEl) {
+      const card = headerEl.parentElement;
+      card.classList.toggle('open');
+    }
+  </script>
+
+</body>
+</html>
