@@ -731,9 +731,7 @@ button {
     box-shadow: 5px 5px 0 var(--blue);
   }
 }
-#is-cougar-chatbot {
-  visibility: hidden;
-}
+
 </style>
 </head>
 <body>
@@ -1204,7 +1202,7 @@ button {
   <link rel="stylesheet" href="cougar-chatbot.css">
 
   <script>
-    function showPage(pageId) {
+      function showPage(pageId) {
 
         document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
 
@@ -1214,13 +1212,8 @@ button {
 
         document.getElementById('btn-' + pageId).classList.add('active');
 
-        // Show chatbot only on Interview Prep
-        const chatbot = document.getElementById('is-cougar-chatbot');
-
-        if (chatbot) {
-          chatbot.style.visibility = pageId === 'interview' ? 'visible' : 'hidden';
-        }
       }
+
 
     function toggleCard(headerEl) {
       const card = headerEl.parentElement;
