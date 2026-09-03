@@ -138,6 +138,602 @@
     font-weight: bold;
     color: #002e5d;
   }
+
+  /* Interview Prep guide */
+  .interview-guide {
+    background: #fff;
+    border: 1px solid #dfe4ea;
+    border-radius: 10px;
+    padding: 30px 34px 40px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  }
+
+  .interview-kicker {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    margin-bottom: 4px;
+    color: #333;
+  }
+
+  .interview-guide h2 {
+    font-size: 2rem;
+    line-height: 1.15;
+    margin-bottom: 18px;
+  }
+
+  .interview-guide h3 {
+    color: #111;
+    font-size: 1.15rem;
+    margin: 24px 0 9px;
+  }
+
+  .interview-guide h4 {
+    color: #111;
+    font-size: 1rem;
+    margin: 20px 0 7px;
+  }
+
+  .interview-guide p {
+    font-size: 0.94rem;
+    line-height: 1.55;
+    color: #222;
+    margin-bottom: 10px;
+  }
+
+  .interview-hero,
+  .interview-visual {
+    display: block;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    margin: 18px auto 24px;
+  }
+
+  .interview-visual {
+    max-width: 620px;
+  }
+
+  .interview-guide ul,
+  .interview-guide ol {
+    margin: 8px 0 14px 24px;
+  }
+
+  .interview-guide li {
+    font-size: 0.92rem;
+    line-height: 1.45;
+    margin-bottom: 7px;
+  }
+
+  .interview-guide strong {
+    color: #111;
+  }
+
+  .phrase {
+    margin: 7px 0;
+    padding-left: 14px;
+    border-left: 3px solid #0059b3;
+  }
+
+  .career-table-wrap {
+    overflow-x: auto;
+    margin: 12px 0 24px;
+  }
+
+  .career-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+    font-size: 0.9rem;
+  }
+
+  .career-table th,
+  .career-table td {
+    border: 1px solid #cfd4da;
+    padding: 12px 11px;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.35;
+  }
+
+  .career-table th {
+    font-weight: 700;
+    background: #f7f7f7;
+  }
+
+  .career-table td:first-child {
+    font-weight: 700;
+  }
+
+  .practice-callout {
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .practice-button {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #0059b3;
+    color: white;
+    font-size: 0.95rem;
+    cursor: pointer;
+  }
+
+  .practice-button:hover {
+    background: #003d80;
+  }
+
+  @media (max-width: 650px) {
+    .interview-guide {
+      padding: 22px 18px 30px;
+    }
+
+    .interview-guide h2 {
+      font-size: 1.55rem;
+    }
+  }
+  /* =========================================
+   8-BIT / COUGAR THEME
+   ========================================= */
+
+:root {
+  --navy: #071b33;
+  --blue: #0d63c9;
+  --ice: #eef6ff;
+  --line: #d8e3ef;
+  --gold: #ffbd39;
+  --text: #132237;
+}
+
+/* Main page */
+body {
+  background-color: var(--ice);
+  color: var(--text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", monospace;
+}
+
+/* Header */
+.banner {
+  background-color: var(--navy);
+  color: white;
+  padding: 45px 20px;
+  border-bottom: 6px solid var(--blue);
+  box-shadow: 0 8px 0 var(--gold);
+}
+
+.banner h1 {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    monospace;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 0 #000;
+}
+
+.banner p {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    monospace;
+  font-size: 0.95rem;
+  margin-top: 12px;
+  color: #a9caeb;
+}
+
+/* Navigation */
+nav.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px;
+  background-color: #dce8f5;
+  border-bottom: 2px solid var(--navy);
+}
+
+nav.tabs button {
+  padding: 12px 22px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    monospace;
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border: 2px solid var(--navy);
+  border-radius: 0;
+  background-color: var(--blue);
+  color: white;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 var(--navy);
+  transition: none;
+}
+
+nav.tabs button:hover {
+  background-color: var(--navy);
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--gold);
+}
+
+nav.tabs button.active {
+  background-color: var(--navy);
+  color: white;
+  box-shadow: 4px 4px 0 var(--gold);
+}
+
+/* Pages */
+.page {
+  display: none;
+  padding: 35px 40px;
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.page.active {
+  display: block;
+}
+
+.page h2 {
+  margin-bottom: 15px;
+  color: var(--navy);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* General page text */
+.page > p {
+  line-height: 1.7;
+}
+
+/* =========================================
+   CAREER CARDS
+   ========================================= */
+
+.career-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.career-card {
+  background-color: white;
+  border-radius: 0;
+  border: 2px solid var(--navy);
+  box-shadow: 7px 7px 0 var(--blue);
+  overflow: hidden;
+}
+
+.career-header {
+  padding: 20px 24px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.career-header:hover {
+  background-color: var(--ice);
+}
+
+.career-title {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    monospace;
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.career-title .arrow {
+  font-size: 0.9rem;
+  transition: none;
+}
+
+.career-card.open .career-title .arrow {
+  transform: rotate(180deg);
+  color: var(--gold);
+}
+
+.career-desc {
+  font-size: 0.9rem;
+  color: #33475b;
+  line-height: 1.6;
+}
+
+.career-bestfit {
+  font-size: 0.8rem;
+  color: #0754a6;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.career-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+  background-color: #f8fbff;
+  padding: 0 24px;
+}
+
+.career-card.open .career-details {
+  max-height: 1300px;
+  padding: 20px 24px;
+  border-top: 2px solid var(--line);
+}
+
+.career-details h4 {
+  color: var(--navy);
+  margin-top: 16px;
+  margin-bottom: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    monospace;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.career-details h4:first-child {
+  margin-top: 0;
+}
+
+.career-details p {
+  font-size: 0.85rem;
+  color: #33475b;
+  line-height: 1.6;
+}
+
+.career-details li {
+  font-size: 0.85rem;
+  color: #33475b;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+/* Salary / stats */
+.stat-row {
+  display: flex;
+  gap: 14px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  background-color: var(--ice);
+  border: 2px solid var(--line);
+  border-radius: 0;
+  padding: 10px 14px;
+  min-width: 140px;
+  box-shadow: 3px 3px 0 var(--line);
+}
+
+.stat-box .stat-label {
+  font-family: ui-monospace, monospace;
+  font-size: 0.65rem;
+  color: #62748a;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stat-box .stat-value {
+  font-family: ui-monospace, monospace;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--navy);
+}
+
+/* =========================================
+   INTERVIEW PREP
+   ========================================= */
+
+.interview-guide {
+  background: white;
+  border: 2px solid var(--navy);
+  border-radius: 0;
+  padding: 30px 34px 40px;
+  box-shadow: 8px 8px 0 var(--blue);
+}
+
+.interview-kicker {
+  font-family: ui-monospace, monospace;
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+.interview-guide h2 {
+  color: var(--navy);
+  font-family: ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.interview-guide h3 {
+  color: var(--navy);
+  font-family: ui-monospace, monospace;
+  text-transform: uppercase;
+  font-size: 1rem;
+  border-bottom: 2px solid var(--blue);
+  padding-bottom: 6px;
+}
+
+.interview-guide h4 {
+  color: var(--navy);
+  font-family: ui-monospace, monospace;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.interview-guide p,
+.interview-guide li {
+  color: #33475b;
+}
+
+/* Make the reference images feel more pixel-art-like */
+.interview-hero,
+.interview-visual {
+  image-rendering: pixelated;
+  border: 2px solid var(--navy);
+  box-shadow: 6px 6px 0 var(--gold);
+}
+
+/* Phrases / quote boxes */
+.phrase {
+  margin: 9px 0;
+  padding: 12px 14px;
+  border-left: 5px solid var(--blue);
+  background-color: var(--ice);
+  font-family: ui-monospace, monospace;
+}
+
+/* Interview table */
+.career-table-wrap {
+  overflow-x: auto;
+  margin: 16px 0 26px;
+}
+
+.career-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 650px;
+  font-size: 0.8rem;
+  font-family: ui-monospace, monospace;
+}
+
+.career-table th,
+.career-table td {
+  border: 2px solid var(--navy);
+  padding: 12px 11px;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.45;
+}
+
+.career-table th {
+  background-color: var(--navy);
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+.career-table td {
+  background-color: white;
+}
+
+.career-table tr:nth-child(even) td {
+  background-color: var(--ice);
+}
+
+.career-table td:first-child {
+  font-weight: bold;
+  color: var(--navy);
+}
+
+
+/* Practice message */
+.practice-callout {
+  margin-top: 30px;
+  padding: 20px;
+  border: 2px solid var(--navy);
+  border-left: 7px solid var(--gold);
+  background-color: var(--ice);
+  box-shadow: 5px 5px 0 var(--navy);
+  font-family: ui-monospace, monospace;
+  text-align: center;
+}
+
+.practice-callout strong {
+  color: var(--blue);
+}
+
+/* =========================================
+   PIXEL DETAILS
+   ========================================= */
+
+/* Remove rounded corners throughout */
+button,
+input,
+textarea,
+select {
+  border-radius: 0 !important;
+}
+
+/* Give links/buttons a retro computer feel */
+button {
+  font-family: ui-monospace, monospace;
+}
+
+/* Selection color */
+::selection {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ice);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--navy);
+  border: 2px solid var(--ice);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--blue);
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+  .banner h1 {
+    font-size: 1.7rem;
+  }
+
+  .banner p {
+    font-size: 0.75rem;
+  }
+
+  nav.tabs {
+    gap: 7px;
+    padding: 12px 8px;
+  }
+
+  nav.tabs button {
+    padding: 10px 12px;
+    font-size: 0.7rem;
+    box-shadow: 3px 3px 0 var(--navy);
+  }
+
+  .page {
+    padding: 25px 18px;
+  }
+
+  .interview-guide {
+    padding: 22px 18px 30px;
+  }
+
+  .career-card {
+    box-shadow: 5px 5px 0 var(--blue);
+  }
+}
+#is-cougar-chatbot {
+  visibility: hidden;
+}
 </style>
 </head>
 <body>
@@ -463,19 +1059,168 @@
   </section>
 
   <section id="page-interview" class="page">
-    <h2>Interview Prep</h2>
-    <p>Click the Cougar Career Coach in the bottom-right corner to take the career-fit quiz or practice mock interview questions for software development, systems analysis, data analytics, and cybersecurity.</p>
+    <div class="interview-guide">
+      <div class="interview-kicker">INTERVIEW SECTION:</div>
+      <h2>Mastering the IS Interview: Strategic Preparation &amp; Mindset</h2>
+
+      <img
+        class="interview-hero"
+        src="interview-assets/interview-banner.png"
+        alt="Interview Prepare Center: Tech and Behavioral Guide">
+
+      <p>
+        Information Systems interviews occupy a distinct niche within the business school ecosystem.
+        Unlike pure computer science or traditional management interviews, IS evaluations test your
+        dual ability to architect technical solutions and translate complex engineering into measurable
+        business value. Before launching into the practice chatbot, ground yourself in the core
+        frameworks, communication blueprints, and mental models detailed below.
+      </p>
+
+      <h3>Section 1: Strategic Response Frameworks</h3>
+
+      <img
+        class="interview-visual"
+        src="interview-assets/par-star-framework.png"
+        alt="The PAR framework for IS majors: Problem, Action, Result">
+
+      <h4>The Tailored PAR / STAR Method for IS Majors</h4>
+      <p>
+        Standard behavioral answers often fall flat because candidates spend too much time setting up
+        background context and not enough time on technical execution. In Information Systems, your
+        narrative should dedicate at least <strong>60% of your response time to the Action phase.</strong>
+      </p>
+
+      <ul>
+        <li><strong>Problem (15–20% of response):</strong> Define the operational bottleneck, inefficient process, or technical gap clearly using precise metrics or business context.</li>
+        <li><strong>Action (60–70% of response):</strong> Detail the specific tools, algorithms, database models, or project management methodologies you selected. Explicitly justify why you chose those specific technologies over alternatives.</li>
+        <li><strong>Result (15–20% of response):</strong> Tie your technical delivery back to measurable business outcomes, such as time saved, percentage efficiency gains, cost reductions, or risk mitigation.</li>
+      </ul>
+
+      <h4>High-Impact Phrases for Behavioral Responses</h4>
+      <p class="phrase"><strong>Architectural Action:</strong> "To solve this structural bottleneck, I architected an automated data pipeline using Python and SQL to eliminate manual data entry."</p>
+      <p class="phrase"><strong>Requirement Analysis:</strong> "I analyzed the fragmented business requirements across departments and translated them into functional system specifications."</p>
+      <p class="phrase"><strong>Project Management:</strong> "I mitigated project risk and scope creep by implementing an agile sprint cadence and daily stand-ups."</p>
+      <p class="phrase"><strong>Quantifiable Impact:</strong> "This refactoring reduced query execution times by 45% and saved the operations team roughly 10 manual hours per week."</p>
+
+      <h3>Section 2: Navigating Technical &amp; System Design Questions</h3>
+      <p>
+        Technical evaluations are designed to test your structured thought process under uncertainty
+        rather than demand instant, flawless code. Never jump directly into writing a script, drawing a
+        database schema, or drafting an ERD without first establishing system constraints.
+      </p>
+
+      <ol>
+        <li><strong>Clarify Requirements:</strong> State your assumptions regarding scale, user volume, read-to-write ratios, and system inputs before writing or sketching a solution.</li>
+        <li><strong>Outline a High-Level Architecture:</strong> Break the problem down verbally or conceptually into modular steps (e.g., ingestion, processing/transformation, storage, and API access).</li>
+        <li><strong>Deep Dive &amp; Address Trade-offs:</strong> Discuss indexing strategies, caching, normalization vs. denormalization, or cloud platform trade-offs to show depth.</li>
+      </ol>
+
+      <h4>Structural Opening Phrases for Technical Prompts</h4>
+      <p class="phrase"><strong>Clarifying Constraints:</strong> "Before jumping into the database schema, let me clarify the expected volume, read-to-write ratio, and scale requirements."</p>
+      <p class="phrase"><strong>Modular Breakdown:</strong> "I'm going to break this system down into three core modules: data ingestion, transformation logic, and client-facing API endpoints."</p>
+      <p class="phrase"><strong>Evaluating Trade-offs:</strong> "To optimize query execution time, my initial approach involves indexing foreign keys, though trade-offs include higher write latency."</p>
+
+      <h3>Section 3: The IS Career Track Playbook</h3>
+      <p>Different IS career tracks look for distinct signals during technical and behavioral rounds:</p>
+
+      <div class="career-table-wrap">
+        <table class="career-table">
+          <thead>
+            <tr>
+              <th>Career Track</th>
+              <th>Primary Focus</th>
+              <th>Key Behavioral Signal</th>
+              <th>Technical Focus</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Software / App Dev</td>
+              <td>Code quality, algorithmic thinking</td>
+              <td>Debugging under pressure, technical adaptability</td>
+              <td>Data structures, APIs, Git workflow</td>
+            </tr>
+            <tr>
+              <td>Business / Systems Analyst</td>
+              <td>Process optimization, requirements gathering</td>
+              <td>Bridging non-technical needs with tech specs</td>
+              <td>Process mapping, SQL, user stories</td>
+            </tr>
+            <tr>
+              <td>Data Analyst / Engineer</td>
+              <td>Data hygiene, actionable reporting</td>
+              <td>Explaining insights to executive leadership</td>
+              <td>SQL, Python, ETL pipelines, BI tools</td>
+            </tr>
+            <tr>
+              <td>IT Project Manager</td>
+              <td>Scope control, stakeholder alignment</td>
+              <td>Managing cross-functional friction and deadlines</td>
+              <td>Agile/Scrum, risk logs, sprint planning</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Section 4: Cross-Functional Alignment &amp; Story Bank Preparation</h3>
+      <p>
+        Position yourself as a multidisciplinary problem solver who thrives in team environments.
+        IS roles require continuous collaboration across business partners, software developers,
+        and non-technical stakeholders.
+      </p>
+
+      <h4>Bridging Phraseology</h4>
+      <ul>
+        <li>"I aligned technical deliverables directly with strategic executive priorities."</li>
+        <li>"I translated complex database constraints into clear user stories for non-technical leadership."</li>
+        <li>"I facilitated collaboration between engineering and operations to ensure smooth deployment."</li>
+      </ul>
+
+      <h4>Developing Your Modular Story Bank</h4>
+      <p>
+        Before entering your practice session with the chatbot, build <strong>3 to 4 modular stories</strong>
+        structured around your past projects or coursework. Each story should contain three distinct
+        angles that you can dial up or down depending on the question asked:
+      </p>
+
+      <ul>
+        <li><strong>Technical Angle:</strong> Focus on a difficult bug, complex query, or system design trade-off you navigated.</li>
+        <li><strong>Cross-Functional Angle:</strong> Highlight a time you managed scope creep, resolved team misalignment, or translated requirements across departments.</li>
+        <li><strong>Impact Angle:</strong> Emphasize the final business output, user feedback, or performance optimization achieved.</li>
+      </ul>
+
+      <p>
+        Refine these core stories in real-time during your chatbot mock sessions until speaking
+        through your technical choices feels fluid and natural.
+      </p>
+
+      <div class="practice-callout">
+      <p>Now time to Practice:</p>
+      <p>Click the <strong>"ASK THE COUGAR"</strong> button in the bottom right corner to practice.</p>
+    </div>
+    </div>
   </section>
 
   <link rel="stylesheet" href="cougar-chatbot.css">
 
   <script>
     function showPage(pageId) {
-      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-      document.querySelectorAll('nav.tabs button').forEach(b => b.classList.remove('active'));
-      document.getElementById('page-' + pageId).classList.add('active');
-      document.getElementById('btn-' + pageId).classList.add('active');
-    }
+
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+
+        document.querySelectorAll('nav.tabs button').forEach(b => b.classList.remove('active'));
+
+        document.getElementById('page-' + pageId).classList.add('active');
+
+        document.getElementById('btn-' + pageId).classList.add('active');
+
+        // Show chatbot only on Interview Prep
+        const chatbot = document.getElementById('is-cougar-chatbot');
+
+        if (chatbot) {
+          chatbot.style.visibility = pageId === 'interview' ? 'visible' : 'hidden';
+        }
+      }
 
     function toggleCard(headerEl) {
       const card = headerEl.parentElement;
